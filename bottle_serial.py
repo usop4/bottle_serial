@@ -1,11 +1,18 @@
 import serial
+import sys
 from bottle import response,route,run
 
-ser = serial.Serial('/dev/tty.usbmodem1411',9600)
+try:
+    ser = serial.Serial('/dev/tty.usbmodem1411',9600)
+except OSError:
+    ser = False
+except:
+    print sys.exc_info()[0]
 
 @route('/arduino')
 def arduino():
-    ser.write("1")
+    if ser:
+        ser.write("1")
     response.set_header('Access-Control-Allow-Origin','*')
     return "Arduino!"
 
