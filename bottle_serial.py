@@ -6,7 +6,11 @@ from bottle import response,route,run
 
 try:
     ser = serial.Serial('/dev/tty.usbmodem1451',9600)
-except OSError:
+except OSError as (errno,strerror):
+    if errno == 2 : # No such file or directory
+        print "USB device is not connected"
+    else:
+        print errno, strerror
     ser = False
 except:
     print sys.exc_info()[0]
