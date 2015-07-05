@@ -9,7 +9,7 @@
 ```
 $ python bottle_serial.py
 ```
-- ブラウザから```http://localhost:8946/arduino/1```を開きます。
+- ブラウザから```http://localhost:8946/arduino/1234```を開くと、Arduinoに文字列```1234````が送信されます。。
 
 ## bottleとpyserialのインストール
 
