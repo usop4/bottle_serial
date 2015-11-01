@@ -5,7 +5,10 @@
 
 ## 使い方
 
-- Arduinoを接続し、bottle_serial.pyのシリアルパラメータ```/dev/tty.usbmodem1451```を書き換え、起動します。
+- Arduinoを接続し、bottle_serial.pyを起動します。
+（Macの場合、ポートを自動取得します。
+Windowsの場合は手動で指定してください。）
+
 ```
 $ python bottle_serial.py
 ```
